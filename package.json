@@ -1,0 +1,59 @@
+{
+  "name": "mql5-language-support",
+  "displayName": "MQL5 Language Support",
+  "description": "Language support for MQL5 (MetaQuotes Language 5) — syntax highlighting, IntelliSense, hover, navigation, and diagnostics",
+  "version": "0.1.0",
+  "publisher": "gavintai",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages"],
+  "license": "MIT",
+  "keywords": ["mql5", "mql4", "metatrader", "expert advisor", "forex"],
+  "activationEvents": [],
+  "main": "./client/out/extension",
+  "contributes": {
+    "languages": [
+      {
+        "id": "mql5",
+        "aliases": ["MQL5", "mql5"],
+        "extensions": [".mq5", ".mqh"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mql5",
+        "scopeName": "source.mql5",
+        "path": "./syntaxes/mql5.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "mql5",
+        "path": "./snippets/mql5.code-snippets"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run bundle",
+    "bundle": "npm run bundle:client && npm run bundle:server",
+    "bundle:client": "esbuild client/src/extension.ts --bundle --outfile=client/out/extension.js --external:vscode --format=cjs --platform=node --minify",
+    "bundle:server": "esbuild server/src/server.ts --bundle --outfile=server/out/server.js --format=cjs --platform=node --minify",
+    "compile": "tsc -b client server",
+    "watch": "tsc -b client server --watch",
+    "watch:bundle": "npm run bundle:client -- --watch & npm run bundle:server -- --watch",
+    "package": "npx @vscode/vsce package --no-dependencies --allow-missing-repository",
+    "lint": "eslint ./client/src ./server/src"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "esbuild": "^0.21.0",
+    "typescript": "^5.3.0"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}

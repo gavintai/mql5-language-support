@@ -1,0 +1,14 @@
+.vscode/**
+.vscode-test/**
+.claude/**
+**/src/**
+**/tsconfig.json
+**/tsconfig.tsbuildinfo
+**/.eslintrc.json
+**/*.map
+node_modules/**
+client/node_modules/**
+server/node_modules/**
+server/out/symbols.js
+goal.md
+CLAUDE.md

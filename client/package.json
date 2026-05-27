@@ -1,0 +1,15 @@
+{
+  "name": "mql5-client",
+  "description": "MQL5 language extension client",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0"
+  }
+}
