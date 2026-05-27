@@ -1,5 +1,8 @@
 # MQL5 Language Support
 
+#### [Repository](https://github.com/gavintai/mql5-language-support)&nbsp;&nbsp;|&nbsp;&nbsp;[Issues](https://github.com/gavintai/mql5-language-support/issues)
+
+
 VS Code extension for MQL5 (MetaQuotes Language 5) — the C++-based language used in MetaTrader 5 for Expert Advisors, indicators, and scripts.
 
 ## Features
